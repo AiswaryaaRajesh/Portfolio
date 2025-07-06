@@ -134,24 +134,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Section visibility only on scroll
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const faders = document.querySelectorAll(".fade-in-section");
+document.addEventListener("DOMContentLoaded", () => {
+    const faders = document.querySelectorAll(".fade-in-section");
 
-//     const options = {
-//         threshold: 0.1,
-//     };
+    const options = {
+        threshold: 0.1,
+    };
 
-//     const appearOnScroll = new IntersectionObserver(function(entries) {
-//         entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add("fade-in-visible");
-//         } else {
-//             entry.target.classList.remove("fade-in-visible");
-//         }
-//         });
-//     }, options);
+    const appearOnScroll = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-visible");
+        } else {
+            entry.target.classList.remove("fade-in-visible");
+        }
+        });
+    }, options);
 
-//     faders.forEach(el => {
-//         appearOnScroll.observe(el);
-//     });
-// });
+    faders.forEach(el => {
+        appearOnScroll.observe(el);
+    });
+});
+
+
+// Overlay for data analytics projects
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const overlayId = card.getAttribute('data-overlay');
+    const overlay = document.getElementById(overlayId);
+
+    if (overlay) {
+      overlay.classList.add('show');
+    //   document.body.classList.add('no-scroll');
+      document.querySelector('.bda-projects-blur-wrapper')?.classList.add('blur');
+    }
+  });
+});
+
+document.querySelectorAll('.close-overlay').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const overlay = btn.closest('.project-overlay');
+    if (overlay) {
+      overlay.classList.remove('show');
+    //   document.body.classList.remove('no-scroll');
+      document.querySelector('.bda-projects-blur-wrapper')?.classList.remove('blur');
+    }
+  });
+});
+
+
+// Debug
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const overlayId = card.getAttribute('data-overlay');
+    const overlay = document.getElementById(overlayId);
+
+    if (overlay) {
+      overlay.classList.add('show');
+    //   document.body.classList.add('no-scroll');
+    } else {
+      console.error("Overlay not found for:", overlayId);
+    }
+  });
+});
