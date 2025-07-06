@@ -35,6 +35,17 @@ img {
   object-fit: contain;
 }
 
+button{
+  background-color: #ffffff00;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.color-lpurple{
+  color: #e8dcff;
+}
+
 /*small screen 
 @media screen and (max-width: 992px)*/
 @media screen and (max-width: 576px){
@@ -148,7 +159,7 @@ img {
   }
 
   .timeline_date-text {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 0.6rem;
     position: static;
     transform: none !important;
@@ -160,7 +171,7 @@ img {
   }
 
   .timeline-text-heading{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   
   .timeline-text-subheading{
@@ -181,40 +192,41 @@ img {
     color: white;
   }
 
+  .overlay-text{
+    transform: translateX(-35%);
+  }
+
   .overlay-text p{
     font-size: 1.5rem;
-    font-weight: 100;
-    position: relative;
-    width: 250;
-    top: -30px;
+     width: 250;
   }
 
-  .overlay-text-spotify{
-    left: 65%;
+  .icon-arrow {
+    bottom: -15.5rem;
+    right: 4rem;
   }
 
-  .overlay-text-godrej{
-    left: 65%;
+  .lok-sabha, .bda-ott{
+    min-height: 22rem;
   }
 
-  .icon-arrow{
-    width: 100%;
-    position: relative;
-    left: 500px;
-    top: 150px;
-    scale: 1.5;
+  .overlay-para{
+    display: none;
   }
 
-  .arrow-godrej{
-    left: 530px;
+  .overlay-image{
+    border-radius: 15px;
   }
 
+  .close-overlay{
+    margin-left: 1rem;
+  }
 }
 
 
 /*Medium Screen
 @media only screen and (min-width: 600px)*/ 
-@media screen and (min-width: 577px) and (max-width: 1024px){
+@media screen and (min-width: 577px) and (max-width: 1023px){
   #preloader p {
       font-size: 2rem;
       text-align: center;
@@ -358,11 +370,11 @@ img {
   }
 
   .timeline-text-heading{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   
   .timeline-text-subheading{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .square-legend{
@@ -379,27 +391,243 @@ img {
     color: white;
   }
 
+  .overlay-text{
+    transform: translateX(-105%);
+  }
+
   .overlay-text p{
+    font-size: 1.3rem;
+    width: 220;
+  }
+
+  .icon-arrow {
+    bottom: -16rem;
+    right: -6.5rem;
+  }
+
+  .lok-sabha, .bda-ott{
+    min-height: 24rem;
+  }
+
+  .overlay-para{
+    display: none;
+  }
+
+  .overlay-image{
+    border-radius: 15px;
+  }
+
+  .close-overlay{
+    margin-left: 1.5rem;
+  }
+
+}
+
+/* width: 1024 */
+@media screen and (width: 1024px){
+
+  #preloader p {
+      font-size: 2.5rem;
+      text-align: center;
+  }
+
+  .header{
+    height: 5.2rem;
+  }
+
+  header .logo{
+    height: 50px;
+    width: auto;
+  }
+
+  nav li{
     font-size: 1.2rem;
-    position: relative;
-    width: 200;
-    top: -30px;
   }
 
-  .overlay-text-spotify{
-    left: 100%;
+  nav li a{
+    margin-right: 1.2rem !important;
+    margin-left: 1.2rem !important;
   }
 
-  .overlay-text-godrej{
-    left: 75%;
+  /* .figma-button{
+    font-size: 1.2rem !important;
+    font-weight: 200 !important;
+  } */
+
+  .sidepanel-left ul{
+      margin-top: 4.1rem;
+      margin-left: 7.48rem;
   }
 
-  .icon-arrow{
-    width: 100%;
-    position: relative;
-    left: 290px;
-    top: 150px;
-    scale: 1.5;
+  .sidepanel-left li>a{
+      font-size: 2.5rem;
+  }
+
+
+  #about{
+    margin-bottom: 7rem;
+  }
+
+  .name-bg{
+    height: 6rem;
+  }
+
+  .name{
+    top: 6.5rem;
+    font-size: 4rem;
+  }
+
+  .about-content p{
+    margin-right: 7rem;
+    font-size: 1.3rem;
+  }
+
+  .box-shadow{
+    border-radius: 15px;
+    border: 4px solid;
+    border-color: #000000;
+    box-shadow: 13px 11px 0px #000000;
+  }
+
+  .sparkle-overlay {
+    position: absolute;
+    top: 8.5rem;
+    left: 9rem;
+    width: 5rem !important;
+  }
+
+  .aish-overlay {
+    position: absolute;
+    top: 11rem;
+    right: 10rem;
+    width: 17rem !important;
+  }
+
+  .coffee-overlay {
+    position: absolute;
+    top: 30rem;
+    left: 13rem;
+    width: 5.5rem !important;
+  }
+
+  .figma-embed p{
+    font-size: 1.3rem;
+  }
+
+  .footer .logo-footer{
+    height: 3rem;
+  }
+
+  .social-logos img{
+    width: 3rem;
+    height: auto;
+  }
+
+  .p-footer{
+    font-size: 1.3rem;
+  }
+
+  .copyright img{
+    width: 1.2rem;
+  }
+
+  .timeline_item {
+    flex-direction: row;
+  }
+
+  .timeline_left {
+    width: 30%;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .timeline_centre {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .timeline_right {
+    width: 60%;
+    border-top: #563e82 5px solid;
+  }
+
+  .timeline_progress {
+    left: 0;
+    width: 5px;
+  }
+
+  .timeline_circle{
+    position: absolute;
+    box-shadow: 0 0 0 5px #563e82;
+  }
+
+  .timeline_date-text {
+    position: sticky;
+    top: 50vh;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    position: absolute;
+    text-align: right; /* if you want to keep it aligned right */
+  }
+
+  .timeline-text-heading{
+    font-size: 1.5rem;
+  }
+  
+  .timeline-text-subheading{
+    font-size: 1.2rem;
+  }
+  
+  .square-legend{
+    height: 2rem;
+    width: 2rem;
+  }
+  
+  .legend-label p{
+    font-size: 1.4rem;
+  }
+
+  .resume_button_a{
+    font-size: 1.4rem;
+    color: white;
+  }
+
+  .overlay-text{
+    transform: translateX(-120%);
+  }
+
+  .overlay-text p{
+    font-size: 1.7rem;
+    width: 350;
+  }
+
+  .icon-arrow {
+    bottom: -15rem;
+    right: -11rem;
+  }
+
+  .lok-sabha, .bda-ott{
+    min-height: 30rem;
+  }
+
+  .overlay-para{
+    display: block;
+  }
+  
+  .close-overlay{
+    margin-left: 1.5rem;
+  }
+
+  .close-overlay-bda{
+    margin-left: 6rem;
+  }
+
+  .heading-close h2{
+    margin-left: 4rem;
   }
 
 }
@@ -421,7 +649,7 @@ img {
   }
 
   nav li{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   nav li a{
@@ -548,18 +776,18 @@ img {
   .timeline_date-text {
     position: sticky;
     top: 50vh;
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     position: absolute;
     text-align: right; /* if you want to keep it aligned right */
   }
 
   .timeline-text-heading{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   
   .timeline-text-subheading{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   
   .square-legend{
@@ -576,28 +804,40 @@ img {
     color: white;
   }
 
+  .overlay-text{
+    transform: translateX(-95%);
+  }
+
   .overlay-text p{
     font-size: 1.7rem;
-    position: relative;
-    top: -30px;
     width: 350;
-    left: 70%;
   }
 
-  .icon-arrow{
-    width: 100%;
-    position: relative;
-    top: 140px;
-    scale: 1.5;
+  .icon-arrow {
+    bottom: -15rem;
+    right: -11rem;
   }
 
-  .arrow-spotify{
-    left: 420px;
+  .lok-sabha, .bda-ott{
+    min-height: 30rem;
   }
 
-  .arrow-godrej{
-    left: 480px;
+  .overlay-para{
+    display: block;
   }
+
+  .close-overlay{
+    margin-left: 9rem;
+  }
+
+  .close-overlay-bda{
+    margin-left: 11rem;
+  }
+
+  .heading-close h2{
+    margin-left: 9rem;
+  }
+
 }
 
 /* -----------------------------------------------------------
@@ -974,7 +1214,7 @@ BODY
   max-width: 1120px;
   margin: 0 auto;
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 30px;
   margin-bottom: 40px;
 }
 
@@ -982,7 +1222,7 @@ BODY
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 80px 0;
+  padding: 30px 0;
   position: relative;
   flex-wrap: wrap;
   width: 100%;
@@ -1068,7 +1308,7 @@ BODY
 
 .overlay-fade-top {
   background: linear-gradient(#e9dcfe, #e9dcfe15);
-  height: 80px;
+  height: 50px;
   width: 100%;
   position: absolute;
   top: 0;
@@ -1079,7 +1319,7 @@ BODY
 
 .overlay-fade-bottom {
   background: linear-gradient(to top, #e9dcfe, #e9dcfe15);
-  height: 80px;
+  height: 50px;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -1091,7 +1331,7 @@ BODY
 .resume_button{
   padding: 0.5rem 1rem;
   border: none;
-  background-color: #472f73;
+  background-color: #4d3b71;
   border-radius: 10px;
 }
 
@@ -1106,6 +1346,7 @@ BODY
   color: white;
 }
 
+/* ---------- PROJECTS ------------ */
 .project-card{
   position: relative;
   overflow: hidden;
@@ -1116,10 +1357,11 @@ BODY
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(88, 88, 88, 0.403);
+  background-color: rgba(54, 54, 54, 0.29);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1;
+  pointer-events: none;
 }
 
 .project-card::after {
@@ -1131,9 +1373,10 @@ BODY
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 2;
+  pointer-events: none;
 }
 
-.overlay-text {
+/* .overlay-text {
   position: absolute;
   top: 20%;
   transform: translateX(-50%);
@@ -1141,7 +1384,7 @@ BODY
   transition: opacity 0.3s ease;
   z-index: 2;
   color: #ffffff;
-}
+} */
 
 /* Hover effects */
 .project-card:hover::before,
@@ -1150,7 +1393,113 @@ BODY
   opacity: 1;
 }
 
+/* Overlay text wrapper */
+.overlay-text {
+  position: absolute;
+  top: 3%; /* top-centered */
+  left: 50%;
+  opacity: 1;
+  z-index: 2;
+  text-align: center;
+}
 
+/* Common text style */
+.overlay-text p {
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+/* Arrow positioning */
+.icon-arrow {
+  position: absolute;
+  scale: 1.5;
+  color: rgb(0, 0, 0);
+}
+
+
+/* --------------- BIG DATA PROJECTS ------------- */
+.bda-projects-list {
+  position: relative;
+}
+
+.bda-projects-blur-wrapper.blur {
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+  z-index: 10;
+}
+
+.project-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Optional: smooth closing as well */
+/* body.no-scroll {
+  overflow: hidden;
+} */
+
+.project-overlay {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* or 100% if you want it to span fully */
+  min-height: 30.2rem;;
+  max-height: 90vh;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 2rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #4d3b71;
+
+  /* Animation styles */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.project-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.overlay-content{
+  top: 0;
+}
+
+.close-overlay{
+  scale: 1.8;
+}
+
+.project-overlay p{
+  font-size: 1.2rem;
+}
+
+.github-link{
+  font-size: 1.2rem !important;
+}
+
+.arrow-onGitHub{
+  background-color: #c3b8da;
+  color: #000000;
+  border-radius: 15px;
+}
+
+.arrow-onGitHub:hover{
+  border: #000000 0.1rem solid;
+  color: #000000;
+}
+
+.project-arrow{
+    scale: 1.5;
+}
 /*-----------------FOOTER-----------------*/
 
 .footer{
