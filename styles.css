@@ -104,10 +104,6 @@ button{
     width: 13rem !important;
   }
 
-  .figma-embed p{
-    font-size: 1rem;
-  }
-
   .footer .logo-footer{
     height: 2rem;
   }
@@ -249,10 +245,6 @@ button{
     margin-right: 0.7rem !important;
     margin-left: 0.7rem !important;
   }
-  
-  /* .figma-button{
-    font-size: 1rem !important;
-  } */
 
   #about{
     margin-bottom: 5rem;
@@ -298,10 +290,6 @@ button{
     top: 27rem;
     left: 2rem;
     width: 5.5rem !important;
-  }
-
-  .figma-embed p{
-    font-size: 1.3rem;
   }
 
   .footer .logo-footer{
@@ -449,11 +437,6 @@ button{
     margin-left: 1.2rem !important;
   }
 
-  /* .figma-button{
-    font-size: 1.2rem !important;
-    font-weight: 200 !important;
-  } */
-
   .sidepanel-left ul{
       margin-top: 4.1rem;
       margin-left: 7.48rem;
@@ -508,10 +491,6 @@ button{
     top: 30rem;
     left: 13rem;
     width: 5.5rem !important;
-  }
-
-  .figma-embed p{
-    font-size: 1.3rem;
   }
 
   .footer .logo-footer{
@@ -657,11 +636,6 @@ button{
     margin-left: 1.2rem !important;
   }
 
-  /* .figma-button{
-    font-size: 1.2rem !important;
-    font-weight: 200 !important;
-  } */
-
   .sidepanel-left ul{
       margin-top: 4.1rem;
       margin-left: 7.48rem;
@@ -716,10 +690,6 @@ button{
     top: 30rem;
     left: 18.2rem;
     width: 5.5rem !important;
-  }
-
-  .figma-embed p{
-    font-size: 1.3rem;
   }
 
   .footer .logo-footer{
@@ -976,12 +946,6 @@ nav li{
 .button-blue:hover{
   background-color: #294282 !important;
 }
-
-/* .figma-embed{
-  top: 0 !important;
-  position: absolute;
-  margin-top: 8rem;
-} */
 
 .sidepanel {
   height: 100%;
