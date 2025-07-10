@@ -6,9 +6,11 @@ window.addEventListener("load", () => {
     setTimeout(() => {
       preloader.classList.add("preload-finish");
       console.log("✅ Preloader faded out.");
-    }, 300);
+    }, 300); // Optional delay for smoother effect
   }
 });
+
+
 
 // ✅ Sidepanel Functions
 function openNav() {
@@ -158,43 +160,54 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Overlay for data analytics projects
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', () => {
     const overlayId = card.getAttribute('data-overlay');
     const overlay = document.getElementById(overlayId);
 
-    if (overlay) {
-      overlay.classList.add('show');
-    //   document.body.classList.add('no-scroll');
-      document.querySelector('.bda-projects-blur-wrapper')?.classList.add('blur');
-    }
-  });
-});
-
-document.querySelectorAll('.close-overlay').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const overlay = btn.closest('.project-overlay');
-    if (overlay) {
-      overlay.classList.remove('show');
-    //   document.body.classList.remove('no-scroll');
-      document.querySelector('.bda-projects-blur-wrapper')?.classList.remove('blur');
-    }
-  });
-});
-
-
-// Debug
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('click', () => {
-    const overlayId = card.getAttribute('data-overlay');
-    const overlay = document.getElementById(overlayId);
+    const blurWrapper = card.closest('.bda-projects-blur-wrapper') || card.closest('.ml-projects-blur-wrapper');
 
     if (overlay) {
       overlay.classList.add('show');
-    //   document.body.classList.add('no-scroll');
+      blurWrapper?.classList.add('blur');
     } else {
       console.error("Overlay not found for:", overlayId);
     }
   });
+});
+
+// CLOSE overlay on close button click
+document.querySelectorAll('.close-overlay').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const overlay = btn.closest('.project-overlay');
+
+    // Find the correct wrapper from the section containing the overlay
+    const section = overlay.closest('section');
+    const blurWrapper = section?.querySelector('.bda-projects-blur-wrapper, .ml-projects-blur-wrapper');
+
+    if (overlay) {
+      overlay.classList.remove('show');
+      blurWrapper?.classList.remove('blur');
+    }
+  });
+});
+
+// Carousel Digital Art
+// Open carousel modal on clicking .dig-art
+document.querySelector('.dig-art').addEventListener('click', () => {
+document.getElementById('artCarouselModal').classList.add('show');
+});
+
+// Close carousel modal
+document.querySelector('.close-art-modal').addEventListener('click', () => {
+document.getElementById('artCarouselModal').classList.remove('show');
+});
+
+
+// Footer Current Year
+document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.querySelector(".footer-year");
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 });
