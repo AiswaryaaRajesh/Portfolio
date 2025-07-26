@@ -10,9 +10,7 @@ window.addEventListener("load", () => {
   }
 });
 
-
-
-// ✅ Sidepanel Functions
+// ✅ Sidepanel Functions -------------------------------------------------------------------------------------------------------
 function openNav() {
     const panel = document.getElementById("mySidepanel");
     if (panel) {
@@ -33,61 +31,72 @@ function closeNav() {
     }
 }
 
-// ✅ Navbar 'active' class toggle on click
-document.querySelectorAll(".nav-link").forEach(item => {
-    item.addEventListener("click", function () {
-        document.querySelectorAll(".nav-link").forEach(li => li.classList.remove("active"));
-        this.classList.add("active");
-        console.log(`✅ Activated nav link: ${this.textContent}`);
-    });
-});
-
-// ✅ Auto-Update Nav-links on Scroll
+// HEADER ------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
 
-    function removeActiveClasses() {
-        navLinks.forEach(link => link.classList.remove("active"));
+  let lastSectionId = null;
+
+  function removeActiveClasses() {
+    navLinks.forEach(link => link.classList.remove("active"));
+  }
+
+  function activateNavLink(sectionId) {
+    if (sectionId === lastSectionId) return; // ✅ Prevent redundant calls
+    lastSectionId = sectionId;
+
+    removeActiveClasses();
+    const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+    if (activeLink) {
+      activeLink.classList.add("active");
+      localStorage.setItem("activeNav", sectionId);
+      console.log(`✅ Activated nav link (via scroll): #${sectionId}`);
     }
+  }
 
-    function activateNavLink(sectionId) {
-        removeActiveClasses();
-        const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-        if (activeLink) {
-            activeLink.classList.add("active");
-            localStorage.setItem("activeNav", sectionId);
-            console.log(`📌 Section in view: #${sectionId}`);
-        }
-    }
-
-    const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver(
+    entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                activateNavLink(entry.target.getAttribute("id"));
-            }
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            activateNavLink(id);
+        }
         });
-    }, { rootMargin: "-50% 0px -50% 0px", threshold: 0.3 });
-
-    sections.forEach(section => observer.observe(section));
-
-    const savedActive = localStorage.getItem("activeNav");
-    if (savedActive) {
-        activateNavLink(savedActive);
-        console.log(`🔁 Restored nav state from localStorage: ${savedActive}`);
+    },
+    {
+        threshold: 0.3, // Trigger earlier
     }
+    );
 
-    navLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            localStorage.setItem("activeNav", this.getAttribute("href").substring(1));
-            removeActiveClasses();
-            this.classList.add("active");
-            console.log(`🔗 Nav link manually clicked: ${this.textContent}`);
-        });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+  // ✅ Restore saved nav on load (optional)
+  const savedActive = localStorage.getItem("activeNav");
+  if (savedActive) {
+    activateNavLink(savedActive);
+    console.log(`🔁 Restored nav state from localStorage: #${savedActive}`);
+  }
+
+  // ✅ Nav Click Highlight (manual)
+  navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+      const targetId = this.getAttribute("href").substring(1);
+      localStorage.setItem("activeNav", targetId);
+      removeActiveClasses();
+      this.classList.add("active");
+      lastSectionId = targetId;
+      console.log(`🔗 Nav link manually clicked: #${targetId}`);
     });
+  });
 });
 
-// ✅ Timeline Scroll Animation
+
+
+// ✅ Timeline Scroll Animation -------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
     console.log("🌀 Timeline animation script initialized.");
 
@@ -135,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Section visibility only on scroll
+// Section visibility only on scroll -------------------------------------------------------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
     const faders = document.querySelectorAll(".fade-in-section");
@@ -176,7 +185,7 @@ document.querySelectorAll('.project-card').forEach(card => {
   });
 });
 
-// CLOSE overlay on close button click
+// CLOSE overlay Projects on close button click -------------------------------------------------------------------------------------------------------
 document.querySelectorAll('.close-overlay').forEach(btn => {
   btn.addEventListener('click', () => {
     const overlay = btn.closest('.project-overlay');
@@ -192,7 +201,7 @@ document.querySelectorAll('.close-overlay').forEach(btn => {
   });
 });
 
-// Carousel Digital Art
+// Carousel Digital Art -------------------------------------------------------------------------------------------------------
 // Open carousel modal on clicking .dig-art
 document.querySelector('.dig-art').addEventListener('click', () => {
 document.getElementById('artCarouselModal').classList.add('show');
@@ -204,14 +213,11 @@ document.getElementById('artCarouselModal').classList.remove('show');
 });
 
 
-// Automatically update footer year
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("✅ Footer Script loaded!");
-
-  const yearSpan = document.querySelector(".footer-year");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  } else {
-    console.warn("⚠️ .footer-year not found");
-  }
+// Footer Current Year -------------------------------------------------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.querySelector(".footer-year");
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 });
+
