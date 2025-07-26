@@ -58,6 +58,14 @@ button{
     height: 4rem;
   }
 
+  .section-padding-top{
+    padding-top: 4rem;
+  }
+
+  .name{
+    padding-top: 4rem;
+  }
+
   .header-sm-container{
     height: 4rem;
   }
@@ -90,7 +98,6 @@ button{
   }
 
   .name{
-    top: 6.5rem;
     font-size: 2rem;
   }
 
@@ -242,6 +249,14 @@ button{
     height: 5rem;
   }
 
+  .name{
+    padding-top: 5rem;
+  }
+
+  .section-padding-top{
+    padding-top: 5rem;
+  }
+
   header .logo{
     height: 50px;
     width: auto;
@@ -255,10 +270,6 @@ button{
     margin-right: 0.7rem !important;
     margin-left: 0.7rem !important;
   }
-  
-  /* .figma-button{
-    font-size: 1rem !important;
-  } */
 
   #about{
     margin-bottom: 5rem;
@@ -269,7 +280,6 @@ button{
   }
 
   .name{
-    top: 6.5rem;
     font-size: 2.8rem;
   }
 
@@ -448,6 +458,14 @@ button{
     height: 5.2rem;
   }
 
+  .section-padding-top{
+    padding-top: 5.2rem;
+  }
+
+  .name{
+    padding-top: 5.2rem;
+  }
+
   header .logo{
     height: 50px;
     width: auto;
@@ -461,11 +479,6 @@ button{
     margin-right: 1.2rem !important;
     margin-left: 1.2rem !important;
   }
-
-  /* .figma-button{
-    font-size: 1.2rem !important;
-    font-weight: 200 !important;
-  } */
 
   .sidepanel-left ul{
       margin-top: 4.1rem;
@@ -486,7 +499,6 @@ button{
   }
 
   .name{
-    top: 6.5rem;
     font-size: 4rem;
   }
 
@@ -655,6 +667,14 @@ button{
     height: 5.2rem;
   }
 
+  .section-padding-top{
+    padding-top: 5.2rem;
+  }
+
+  .name{
+    padding-top: 5.2rem;
+  }
+
   header .logo{
     height: 50px;
     width: auto;
@@ -668,11 +688,6 @@ button{
     margin-right: 1.2rem !important;
     margin-left: 1.2rem !important;
   }
-
-  /* .figma-button{
-    font-size: 1.2rem !important;
-    font-weight: 200 !important;
-  } */
 
   .sidepanel-left ul{
       margin-top: 4.1rem;
@@ -693,7 +708,6 @@ button{
   }
 
   .name{
-    top: 6.5rem;
     font-size: 4rem;
   }
 
@@ -960,22 +974,9 @@ nav li{
 
 .nav-link.active {
   transition: all 0.3s ease-in-out;
-  font-weight: bold;
+  font-weight: bold !important;
   color: #000000 !important;
 }
-
-/*
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2rem;
-  height: 0.3rem;
-  background-color: #afebff;
-  transition: color 0.3s, font-weight 0.3s;
-}
-*/
 
 .button-blue{
   background-color: #142654 !important;
@@ -986,11 +987,6 @@ nav li{
   background-color: #294282 !important;
 }
 
-/* .figma-embed{
-  top: 0 !important;
-  position: absolute;
-  margin-top: 8rem;
-} */
 
 .sidepanel {
   height: 100%;
@@ -1067,7 +1063,11 @@ BODY
 /* About */
 
 #about{
-  margin-top: 6.5rem;
+  margin-top: 2.5rem;
+}
+
+.name{
+  top: 2.5rem;
 }
 
 .name-bg{
@@ -1146,10 +1146,6 @@ BODY
   opacity: 0;
   animation: fadeIn 0.3s ease-in forwards 2.1s; /* Delayed to sync with bg */
   z-index: 3;
-}
-
-.section-padding-end{
-  padding-bottom: 4rem;
 }
 
 
@@ -1352,7 +1348,6 @@ BODY
   content: "";
   position: absolute;
   inset: 0;
-  /* background-color: rgba(54, 54, 54, 0.29); */
   background-color: rgba(255, 255, 255, 0.10);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -1374,7 +1369,6 @@ BODY
 
 .project-card:hover{
   transition: opacity 0.3s ease;
-  /* background-color: rgba(54, 54, 54, 0.29); */
   background-color: rgba(255, 255, 255, 0.10);
   cursor: pointer;
 }
@@ -1419,17 +1413,11 @@ BODY
   pointer-events: auto;
 }
 
-/* Optional: smooth closing as well */
-/* body.no-scroll {
-  overflow: hidden;
-} */
-
 .project-overlay {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   min-height: 30.2rem;
-  /* background: rgba(0, 0, 0, 0.95); */
   background: rgba(255, 255, 255, 0.10);
   color: white;
   padding: 2rem;
