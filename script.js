@@ -214,10 +214,14 @@ document.getElementById('artCarouselModal').classList.remove('show');
 
 
 // Footer Current Year -------------------------------------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", function () {
-    const yearSpan = document.querySelector(".footer-year");
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("✅ Script loaded!");
+
+  const yearSpan = document.querySelector(".footer-year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  } else {
+    console.warn("⚠️ .footer-year not found");
+  }
 });
 
