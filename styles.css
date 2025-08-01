@@ -1483,6 +1483,11 @@ BODY
     scale: 1.5;
 }
 
+.prod-subtitle{
+  color: #e9dcfe;
+  font-size: 1.2rem;
+}
+
 /* ----------DIGITAL ART---------- */
 .dig-art-img {
   position: relative;
