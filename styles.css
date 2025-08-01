@@ -13,6 +13,11 @@ body{
   font-family: 'Salsa', cursive !important;
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
 *{
   margin: 0px;
   border: border-box;
