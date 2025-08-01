@@ -169,6 +169,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+// OPEN OVERLAY --------------------------------------------------------------------------------------------------
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', () => {
     const overlayId = card.getAttribute('data-overlay');
@@ -179,20 +181,23 @@ document.querySelectorAll('.project-card').forEach(card => {
     if (overlay) {
       overlay.classList.add('show');
       blurWrapper?.classList.add('blur');
+
+      // Save a reference (via ID) to the blur wrapper for later
+      if (blurWrapper && blurWrapper.id) {
+        overlay.setAttribute('data-blur-wrapper', blurWrapper.id);
+      }
     } else {
       console.error("Overlay not found for:", overlayId);
     }
   });
 });
 
-// CLOSE overlay Projects on close button click -------------------------------------------------------------------------------------------------------
+// CLOSE OVERLAY
 document.querySelectorAll('.close-overlay').forEach(btn => {
   btn.addEventListener('click', () => {
     const overlay = btn.closest('.project-overlay');
-
-    // Find the correct wrapper from the section containing the overlay
-    const section = overlay.closest('section');
-    const blurWrapper = section?.querySelector('.bda-projects-blur-wrapper, .ml-projects-blur-wrapper');
+    const blurWrapperId = overlay?.getAttribute('data-blur-wrapper');
+    const blurWrapper = blurWrapperId ? document.getElementById(blurWrapperId) : null;
 
     if (overlay) {
       overlay.classList.remove('show');
