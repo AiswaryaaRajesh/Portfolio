@@ -977,6 +977,10 @@ nav li{
   list-style-type: none;
 }
 
+.nav-link:hover{
+  color: #2c2c2c !important;
+}
+
 .nav-link.active {
   transition: all 0.3s ease-in-out;
   font-weight: bold !important;
@@ -997,7 +1001,7 @@ nav li{
   height: 100%;
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
+  z-index: 1000; /* Stay on top */
   top: 0;
   left: 0;
   background-color: #ffffff; /* Black*/
@@ -1439,12 +1443,6 @@ BODY
   transition: opacity 0.4s ease;
 }
 
-.project-overlay.show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
 #bda-overlay1, #bda-overlay2{
   background-color: #4d3b71;
 }
@@ -1592,7 +1590,7 @@ BODY
   border-top: black 4px solid;
   position: absolute;
   width: 100%;
-  z-index: 2000;
+  z-index: 500;
 }
 
 footer{
